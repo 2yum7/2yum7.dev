@@ -13,18 +13,18 @@ export default function BlogList({ posts }: { posts: Post[] }) {
         <span aria-hidden='true'>›</span>
       </div>
 
-      {/* <ul className="mt-4 space-y-3">
+      <ul className='mt-4 space-y-3'>
         {posts.map((p) => (
           <li key={p.slug}>
             <Link
-              href={`/blog/${p.slug}`}
-              className="block text-base font-medium text-slate-200 hover:text-white transition"
+              href={`/posts/${p.slug}`}
+              className='block text-base font-medium text-slate-200 hover:text-white transition'
             >
               {p.title}
             </Link>
           </li>
         ))}
-      </ul> */}
+      </ul>
     </section>
   );
 }

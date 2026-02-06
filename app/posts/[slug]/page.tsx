@@ -1,16 +1,31 @@
-export default async function Page({
-  params,
-}: {
-  params: Promise<{ slug: string }>;
-}) {
+import { GetAllPostSlugs, GetPostBySlug } from "@/libs/post";
+import { MDXRemote } from "next-mdx-remote/rsc";
+
+interface PostPageProps {
+  params: Promise<{
+    slug: string;
+  }>;
+}
+
+export async function generateStaticParams() {
+  const slugs = GetAllPostSlugs();
+  return slugs.map((slug) => ({ params: { slug } }));
+}
+
+export default async function PostPage({ params }: PostPageProps) {
+  // 1. params を await する（Next.js 15以降の仕様）
   const { slug } = await params;
-  const { default: Post } = await import(`@/content/${slug}.mdx`);
 
-  return <Post />;
+  // 2. await した後の slug を渡す
+  const { content, data } = GetPostBySlug(slug);
+
+  return (
+    <div>
+      <h1>{data.title}</h1>
+      <p>{data.category}</p>
+      <div>
+        <MDXRemote source={content} />
+      </div>
+    </div>
+  );
 }
-
-export function generateStaticParams() {
-  return [{ slug: "welcome" }, { slug: "about" }];
-}
-
-export const dynamicParams = false;
