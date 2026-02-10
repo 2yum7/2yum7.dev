@@ -12,7 +12,6 @@ const posts: Post[] = [
 export default function Home() {
   return (
     <div className='min-h-screen'>
-      <SiteHeader />
       <HeroImage />
       <Blog posts={posts} />
     </div>

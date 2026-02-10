@@ -4,7 +4,9 @@ export default function SiteHeader() {
   return (
     <header className='flex items-center justify-between px-8 py-4 bg-black'>
       {/* logo */}
-      <div className='flex items-center gap-2'>2yum7</div>
+      <div className='flex items-center gap-2'>
+        <Link href='/'>2yum7</Link>
+      </div>
       <nav>
         <ul className='flex gap-6 text-sm text-slate-200'>
           <li>
