@@ -1,5 +1,7 @@
+import Toc from "@/components/toc";
 import { GetAllPostSlugs, GetPostBySlug } from "@/libs/post";
 import { MDXRemote } from "next-mdx-remote/rsc";
+import rehypeSlug from "rehype-slug";
 import remarkGfm from "remark-gfm";
 
 interface PostPageProps {
@@ -19,6 +21,7 @@ export default async function PostPage({ params }: PostPageProps) {
   const options = {
     mdxOptions: {
       remarkPlugins: [remarkGfm],
+      rehypePlugins: [rehypeSlug], //見出しにIDを付与するため
     },
   };
 
@@ -26,12 +29,19 @@ export default async function PostPage({ params }: PostPageProps) {
   const { content, data } = GetPostBySlug(slug);
 
   return (
-    <div>
-      <h1>{data.title}</h1>
-      <p>{data.category}</p>
-      <div className='prose dark:prose-invert'>
-        <MDXRemote source={content} options={options} />
-      </div>
+    <div className='flex gap-8'>
+      <article className='w-9/12'>
+        <h1>{data.title}</h1>
+        <p>{data.category}</p>
+
+        <div className='post prose dark:prose-invert'>
+          <MDXRemote source={content} options={options} />
+        </div>
+      </article>
+
+      <aside className='w-3/12'>
+        <Toc />
+      </aside>
     </div>
   );
 }

@@ -7,6 +7,7 @@ type Post = { title: string; slug: string };
 const posts: Post[] = [
   { title: "SamplePost", slug: "sample-post" },
   { title: "SamplePost2", slug: "sample-post2" },
+  { title: "test", slug: "test" },
 ];
 
 export default function Home() {
