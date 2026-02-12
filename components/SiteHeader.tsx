@@ -10,13 +10,13 @@ export default function SiteHeader() {
       <nav>
         <ul className='flex gap-6 text-sm text-slate-200'>
           <li>
-            <Link href='/dashboard'>Home</Link>
+            <Link href='/'>Home</Link>
           </li>
           <li>
-            <Link href='/dashboard'>About</Link>
+            <Link href='/about'>About</Link>
           </li>
           <li>
-            <Link href='/dashboard'>Blog</Link>
+            <Link href='/blog'>Blog</Link>
           </li>
         </ul>
       </nav>
