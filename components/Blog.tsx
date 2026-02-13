@@ -7,12 +7,7 @@ type Props = {
 
 export default function BlogList({ posts }: Props) {
   return (
-    <section className='mt-16'>
-      <div className='flex items-center gap-2 text-s text-slate-100'>
-        <span>Writing</span>
-        <span aria-hidden='true'>›</span>
-      </div>
-
+    <section className='mt-8'>
       <ul className='mt-4 space-y-3'>
         {posts.map((p) => (
           <li key={p.slug}>
