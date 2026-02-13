@@ -1,11 +1,11 @@
+import { metadata } from "@/app/layout";
 import Link from "next/link";
 
-type Post = {
-  title: string;
-  slug: string;
+type Props = {
+  posts: PostMeta[];
 };
 
-export default function BlogList({ posts }: { posts: Post[] }) {
+export default function BlogList({ posts }: Props) {
   return (
     <section className='mt-16'>
       <div className='flex items-center gap-2 text-s text-slate-100'>

@@ -8,7 +8,7 @@ export default function PostsLayout({
 }) {
   return (
     <>
-      <main className='mx-auto max-w-3xl px-4'>{children}</main>
+      <main className='mx-auto max-w-3xl px-4 pt-12'>{children}</main>
     </>
   );
 }

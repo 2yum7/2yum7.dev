@@ -1,16 +1,9 @@
 import Blog from "@/components/Blog";
 import HeroImage from "@/components/HeroImage";
-import SiteHeader from "@/components/SiteHeader";
-
-type Post = { title: string; slug: string };
-
-const posts: Post[] = [
-  { title: "SamplePost", slug: "sample-post" },
-  { title: "SamplePost2", slug: "sample-post2" },
-  { title: "test", slug: "test" },
-];
+import { GetAllPosts } from "@/libs/post";
 
 export default function Home() {
+  const posts = GetAllPosts();
   return (
     <div className='min-h-screen'>
       <HeroImage />

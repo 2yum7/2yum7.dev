@@ -2,6 +2,14 @@ import { readFileSync, readdirSync } from "fs";
 import path from "path";
 import matter from "gray-matter";
 
+export type PostMeta = {
+  slug: string;
+  title: string;
+  category?: string;
+  date?: string;
+  tags?: string[];
+};
+
 // MDXファイルのディレクトリ
 const POSTS_PATH = path.join(process.cwd(), "contents/posts");
 
@@ -25,4 +33,21 @@ export function GetPostBySlug(slug: string) {
     content,
     data,
   };
+}
+
+// 全記事の frontmatter（メタデータ）だけをまとめて取得する関数
+export function GetAllPosts() {
+  const slugs = GetAllPostSlugs();
+
+  return slugs.map((slug) => {
+    const { data } = GetPostBySlug(slug);
+
+    return {
+      slug,
+      title: data.title,
+      category: data.category,
+      date: data.date, // frontmatterにあるなら
+      tag: data.tags ?? [],
+    };
+  });
 }

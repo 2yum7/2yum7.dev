@@ -16,7 +16,7 @@ export default function SiteHeader() {
             <Link href='/about'>About</Link>
           </li>
           <li>
-            <Link href='/blog'>Blog</Link>
+            <Link href='/posts'>Blog</Link>
           </li>
         </ul>
       </nav>
