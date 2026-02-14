@@ -1,5 +1,6 @@
 import { metadata } from "@/app/layout";
 import Link from "next/link";
+import type { PostMeta } from "@/libs/post";
 
 type Props = {
   posts: PostMeta[];
