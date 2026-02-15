@@ -4,6 +4,7 @@ import { MDXRemote } from "next-mdx-remote/rsc";
 import rehypeSlug from "rehype-slug";
 import remarkGfm from "remark-gfm";
 import type { Metadata } from "next";
+import { notFound } from "next/navigation";
 
 interface PostPageProps {
   params: Promise<{
@@ -14,14 +15,20 @@ interface PostPageProps {
 export async function generateMetadata({
   params,
 }: {
-  params: { slug: string };
+  params: Promise<{ slug: string }>;
 }): Promise<Metadata> {
-  const { data } = GetPostBySlug(params.slug);
+  const { slug } = await params;
 
-  return {
-    title: data.title,
-    description: data.description ?? data.title,
-  };
+  try {
+    const { data } = GetPostBySlug(slug);
+    return {
+      title: data.title ?? "Post",
+      description: data.description ?? data.title ?? "",
+    };
+  } catch (e) {
+    console.error("generateMetadata error:", e);
+    notFound();
+  }
 }
 
 export async function generateStaticParams() {

@@ -2,7 +2,7 @@ import Image from "next/image";
 
 export default function Page() {
   return (
-    <main className='mx-auto max-w-5xl px-4 py-10 mb-12 md:py-16 md:mb-12'>
+    <main className='mx-auto max-w-5xl px-4 py-10 mb-12 md:py-16'>
       <div className='flex flex-col gap-10 md:flex-row md:items-start md:justify-between md:gap-16'>
         {/* Left: Image */}
         <section className='md:w-5/12'>
