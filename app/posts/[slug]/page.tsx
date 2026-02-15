@@ -3,6 +3,7 @@ import { GetAllPostSlugs, GetPostBySlug } from "@/libs/post";
 import { MDXRemote } from "next-mdx-remote/rsc";
 import rehypeSlug from "rehype-slug";
 import remarkGfm from "remark-gfm";
+import type { Metadata } from "next";
 
 interface PostPageProps {
   params: Promise<{

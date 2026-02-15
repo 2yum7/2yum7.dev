@@ -14,8 +14,10 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "2yum7",
-  template: "%s | 2yum7",
+  title: {
+    default: "2yum7",
+    template: "%s | 2yum7",
+  },
   description: "Personal blog and notes about tech",
 };
 
