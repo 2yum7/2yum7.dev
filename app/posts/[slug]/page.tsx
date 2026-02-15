@@ -10,6 +10,19 @@ interface PostPageProps {
   }>;
 }
 
+export async function generateMetadata({
+  params,
+}: {
+  params: { slug: string };
+}): Promise<Metadata> {
+  const { data } = GetPostBySlug(params.slug);
+
+  return {
+    title: data.title,
+    description: data.description ?? data.title,
+  };
+}
+
 export async function generateStaticParams() {
   const slugs = GetAllPostSlugs();
   return slugs.map((slug) => ({ params: { slug } }));
