@@ -11,11 +11,14 @@ export default function Page() {
       <div className='grid grid-cols-1 gap-6 md:grid-cols-2'>
         {posts.map((p) => (
           <article
-            key={p.slug}
+            key={`${p.lang}-${p.slug}`}
             className='rounded-xl border border-white/10 bg-white/5 p-5 hover:bg-white/10'
           >
             <h2 className='text-lg font-medium'>
-              <Link href={`/posts/${p.slug}`} className='hover:underline'>
+              <Link
+                href={`/posts/${p.lang}/${p.slug}`}
+                className='hover:underline'
+              >
                 {p.title}
               </Link>
             </h2>
