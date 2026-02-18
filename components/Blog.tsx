@@ -1,4 +1,3 @@
-import { metadata } from "@/app/layout";
 import Link from "next/link";
 import type { PostMeta } from "@/libs/post";
 
@@ -11,9 +10,9 @@ export default function BlogList({ posts }: Props) {
     <section className='mt-8'>
       <ul className='mt-4 space-y-3'>
         {posts.map((p) => (
-          <li key={p.slug}>
+          <li key={`${p.lang}-${p.slug}`}>
             <Link
-              href={`/posts/${p.slug}`}
+              href={`/posts/${p.lang}/${p.slug}`}
               className='block text-base font-medium text-slate-200 hover:text-white transition'
             >
               {p.title}
