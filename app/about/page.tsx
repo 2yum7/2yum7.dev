@@ -7,20 +7,23 @@ export default function Page() {
         {/* Left: Image */}
         <section className='md:w-5/12'>
           <div className='flex flex-col items-center justify-center'>
-            <p className='text-2xl font-semibold tracking-tight text-white'>
-              2yum7
-            </p>
-
-            <div className='mt-4 relative h-36 w-36 overflow-hidden rounded-full border border-white/10 bg-white/5 md:h-40 md:w-40'>
+            <div className='relative h-36 w-36 overflow-hidden rounded-full border border-white/10 bg-white/5 md:h-40 md:w-40'>
               <Image
                 src='/images/icon.jpg'
                 alt='icon image'
                 fill
                 className='object-cover'
+                style={{ objectPosition: 'center 20%' }}
                 sizes='(min-width: 768px) 160px, 144px'
                 priority
               />
             </div>
+            <p className='mt-4 text-2xl font-semibold tracking-tight text-white'>
+              Ibuki
+            </p>
+            <p className='mt-1 text-base font-medium tracking-tight text-gray-400'>
+              2yum7
+            </p>
           </div>
         </section>
 
