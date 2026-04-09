@@ -87,7 +87,7 @@ export default async function PostPage({ params }: PostPageProps) {
             </div>
           </header>
 
-          <div className='post prose dark:prose-invert'>
+          <div className='post prose prose-invert'>
             <MDXRemote source={content} options={options} />
           </div>
         </article>
