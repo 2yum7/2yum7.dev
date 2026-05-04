@@ -28,7 +28,7 @@ export function GetAllPostParams(): { lang: Lang; slug: string }[] {
   return SUPPORTED_LANGS.flatMap((lang) => {
     const langDir = path.join(POSTS_PATH, lang);
 
-    // ディレクトリがない場合はスキップ（任意）
+    // ディレクトリがない場合はスキップ
     if (!existsSync(langDir)) return [];
 
     const postFilePaths = readdirSync(langDir).filter((p) => /\.mdx?$/.test(p));
