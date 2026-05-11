@@ -29,6 +29,6 @@
     ".next/types/**/*.ts",
     ".next/dev/types/**/*.ts",
     "**/*.mts"
-  ],
+, "contents/drafts/Internetwork.mdx"  ],
   "exclude": ["node_modules"]
 }

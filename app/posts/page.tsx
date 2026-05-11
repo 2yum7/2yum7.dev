@@ -5,7 +5,7 @@ export default function Page() {
   const posts = GetAllPosts();
 
   return (
-    <main className='mx-auto max-w-5xl px-4 py-2'>
+    <div className='mx-auto max-w-5xl px-4 py-2'>
       <h1 className='mb-8 text-2xl font-semibold'>All posts</h1>
 
       <div className='grid grid-cols-1 gap-6 md:grid-cols-2'>
@@ -31,6 +31,6 @@ export default function Page() {
           </article>
         ))}
       </div>
-    </main>
+    </div>
   );
 }

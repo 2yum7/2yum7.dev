@@ -10,7 +10,7 @@ import Link from "next/link";
 
 export default function Page() {
   return (
-    <main className='mx-auto max-w-5xl px-4 py-10 mb-12 md:py-16'>
+    <div className='mx-auto max-w-5xl px-4 py-10 mb-12 md:py-16'>
       <div className='flex flex-col items-center justify-center'>
         <div className='relative h-36 w-36 overflow-hidden rounded-full border border-white/10 bg-white/5 md:h-40 md:w-40'>
           <Image
@@ -82,6 +82,6 @@ export default function Page() {
           Read the blog
         </Link>
       </div>
-    </main>
+    </div>
   );
 }

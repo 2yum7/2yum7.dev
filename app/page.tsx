@@ -6,7 +6,7 @@ export default function Home() {
   const posts = GetAllPosts();
 
   return (
-    <main className='min-h-screen'>
+    <>
       <section>
         <HeroImage />
       </section>
@@ -23,6 +23,6 @@ export default function Home() {
 
         <Blog posts={posts} />
       </section>
-    </main>
+    </>
   );
 }

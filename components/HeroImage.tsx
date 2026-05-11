@@ -6,23 +6,20 @@ export default function HeroImage() {
       <div className='flex flex-col gap-6 md:flex-row md:items-center md:justify-between'>
         {/* Text */}
         <div className='md:w-5/12'>
-          <p className='text-2xl font-semibold tracking-tight leading-tight text-white md:text-3xl'>
-            I enjoy turning ideas into real, visible things.
-          </p>
-          <p className='mt-3 text-sm leading-6 text-white/70 md:text-base'>
+          <p className='text-xl font-semibold tracking-tight leading-tight text-white md:text-2xl'>
             Building and writing what I learn along the way.
           </p>
         </div>
 
-        {/* Image */}
-        <div className='relative h-[22vh] w-full overflow-hidden rounded-xl border border-white/10 bg-white/5 md:h-[28vh] md:w-7/12'>
-          <Image
-            src='/images/film.jpeg'
-            alt='hero image'
-            fill
-            className='object-cover'
-            sizes='(min-width: 768px) 60vw, 100vw'
-            priority
+        {/* film */}
+        <div className='relative h-[32vh] w-full overflow-hidden rounded-xl bg-white/5 md:h-[42vh] md:w-7/12'>
+          <video
+            src='/film.mp4'
+            autoPlay
+            muted
+            loop
+            playsInline
+            className='h-full w-full object-cover'
           />
         </div>
       </div>
